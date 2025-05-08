@@ -16,12 +16,467 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@lovable_dev" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <div id="root"></div>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+      <div class="container">
+        <a href="#home" class="logo">
+          <div class="logo-circle">
+            <span>NBDK</span>
+          </div>
+          <span class="logo-text">Napas Bumi Detak Kehidupan</span>
+        </a>
+        
+        <div class="nav-links" id="navLinks">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#schedule" class="nav-link">Schedule</a>
+          <a href="#gallery" class="nav-link">Gallery</a>
+          <a href="#team" class="nav-link">Team</a>
+          <a href="#tickets" class="nav-link">Tickets</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        
+        <div class="menu-toggle" id="menuToggle">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Hero Section with Countdown -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="floating">
+          <div class="logo-circle-large">
+            <div class="logo-circle-medium">
+              <span>NBDK</span>
+            </div>
+          </div>
+        </div>
+        <h1 class="animate-pulse-slow">Napas Bumi<br>Detak Kehidupan</h1>
+        <p class="hero-subtitle">
+          An extraordinary celebration of nature's rhythm through music, dance, and art. 
+          Presented by our talented students.
+        </p>
+        
+        <div class="hero-buttons">
+          <a href="#tickets" class="btn btn-primary">Get Tickets</a>
+          <a href="#about" class="btn btn-secondary">
+            Learn More 
+            <i class="fas fa-chevron-down animate-bounce"></i>
+          </a>
+        </div>
+        
+        <!-- Countdown Timer -->
+        <div class="countdown-container">
+          <h3>
+            <i class="far fa-clock"></i>
+            Show Starts In:
+          </h3>
+          <div class="countdown-grid">
+            <div class="countdown-item">
+              <div id="days" class="countdown-number">00</div>
+              <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-item">
+              <div id="hours" class="countdown-number">00</div>
+              <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-item">
+              <div id="minutes" class="countdown-number">00</div>
+              <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-item">
+              <div id="seconds" class="countdown-number">00</div>
+              <div class="countdown-label">Seconds</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">About The Show</h2>
+        <div class="about-content">
+          <div class="about-image">
+            <img src="images/about-show.jpg" alt="About the Show">
+          </div>
+          <div class="about-text">
+            <h3>Celebrating Earth's Rhythm</h3>
+            <p>
+              "Napas Bumi Detak Kehidupan" (Earth's Breath, Life's Heartbeat) is an immersive 
+              theatrical experience that celebrates the profound connection between human existence
+              and the natural world.
+            </p>
+            <p>
+              Through captivating performances of music, dance, and visual arts, our talented 
+              students explore the delicate balance of our ecosystem and inspire action toward 
+              environmental stewardship.
+            </p>
+            <p>
+              Join us for a transformative evening that will leave you with a renewed appreciation 
+              for the rhythm of nature and our place within it.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Schedule Section -->
+    <section id="schedule" class="schedule">
+      <div class="container">
+        <h2 class="section-title">Event Schedule</h2>
+        <div class="date-container">
+          <i class="far fa-calendar-alt"></i>
+          <span>May 27-28, 2025</span>
+        </div>
+        
+        <div class="schedule-tabs">
+          <button class="schedule-tab active" data-date="may-27">May 27</button>
+          <button class="schedule-tab" data-date="may-28">May 28</button>
+        </div>
+        
+        <div class="timeline-container">
+          <!-- May 27 Schedule -->
+          <div class="timeline active" id="may-27">
+            <div class="timeline-item">
+              <div class="timeline-marker">1</div>
+              <div class="timeline-content">
+                <div class="time"><i class="far fa-clock"></i> 6:30 PM</div>
+                <h3>Opening Reception</h3>
+                <p>Welcome reception with light refreshments and exhibition preview</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker">2</div>
+              <div class="timeline-content">
+                <div class="time"><i class="far fa-clock"></i> 7:00 PM</div>
+                <h3>Art Exhibition</h3>
+                <p>Showcase of student environmental art installations</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker">3</div>
+              <div class="timeline-content">
+                <div class="time"><i class="far fa-clock"></i> 8:00 PM</div>
+                <h3>Music Performance</h3>
+                <p>Symphony of natural sounds performed by our orchestra</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker">4</div>
+              <div class="timeline-content">
+                <div class="time"><i class="far fa-clock"></i> 9:15 PM</div>
+                <h3>Closing Remarks</h3>
+                <p>Thank you and invitation for the main event</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- May 28 Schedule -->
+          <div class="timeline" id="may-28">
+            <div class="timeline-item">
+              <div class="timeline-marker">1</div>
+              <div class="timeline-content">
+                <div class="time"><i class="far fa-clock"></i> 6:30 PM</div>
+                <h3>Doors Open</h3>
+                <p>Welcome reception with light refreshments</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker">2</div>
+              <div class="timeline-content">
+                <div class="time"><i class="far fa-clock"></i> 7:00 PM</div>
+                <h3>Opening Ceremony</h3>
+                <p>Welcome address and introduction to the show's theme</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker">3</div>
+              <div class="timeline-content">
+                <div class="time"><i class="far fa-clock"></i> 7:15 PM</div>
+                <h3>Act I: Earth's Origins</h3>
+                <p>A dance performance depicting the formation of our planet</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker">4</div>
+              <div class="timeline-content">
+                <div class="time"><i class="far fa-clock"></i> 7:40 PM</div>
+                <h3>Musical Interlude</h3>
+                <p>Symphony of natural sounds performed by our orchestra</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker">5</div>
+              <div class="timeline-content">
+                <div class="time"><i class="far fa-clock"></i> 8:00 PM</div>
+                <h3>Intermission</h3>
+                <p>15-minute break with refreshments available</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker">6</div>
+              <div class="timeline-content">
+                <div class="time"><i class="far fa-clock"></i> 8:15 PM</div>
+                <h3>Act II: Humanity's Impact</h3>
+                <p>A powerful dramatic performance on human-nature relationships</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker">7</div>
+              <div class="timeline-content">
+                <div class="time"><i class="far fa-clock"></i> 8:45 PM</div>
+                <h3>Final Act: Harmony Restored</h3>
+                <p>A hopeful vision for the future through dance and song</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker">8</div>
+              <div class="timeline-content">
+                <div class="time"><i class="far fa-clock"></i> 9:15 PM</div>
+                <h3>Closing Remarks</h3>
+                <p>Thank you and call to action</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+      <div class="container">
+        <h2 class="section-title">Gallery</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="images/gallery-1.jpg" alt="Rehearsal session for Earth's Origins dance">
+            <div class="gallery-overlay">
+              <p>Rehearsal session for Earth's Origins dance</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery-2.jpg" alt="Stage design for Harmony Restored">
+            <div class="gallery-overlay">
+              <p>Stage design for Harmony Restored</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery-3.jpg" alt="Student musicians practicing natural sounds">
+            <div class="gallery-overlay">
+              <p>Student musicians practicing natural sounds</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery-4.jpg" alt="Costume design for the elements">
+            <div class="gallery-overlay">
+              <p>Costume design for the elements</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery-5.jpg" alt="Behind the scenes of prop making">
+            <div class="gallery-overlay">
+              <p>Behind the scenes of prop making</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery-6.jpg" alt="Lighting rehearsal for Act II">
+            <div class="gallery-overlay">
+              <p>Lighting rehearsal for Act II</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Image Preview Modal -->
+        <div id="imageModal" class="modal">
+          <span class="close-modal">&times;</span>
+          <img id="modalImage" class="modal-content">
+          <div id="modalCaption"></div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Team Section -->
+    <section id="team" class="team">
+      <div class="container">
+        <h2 class="section-title">Creative Team</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="member-avatar">
+              <img src="images/team-1.jpg" alt="Sarah Johnson">
+            </div>
+            <h3>Sarah Johnson</h3>
+            <p class="member-role">Show Director</p>
+            <p class="member-bio">Sarah has been directing school productions for over 10 years with a passion for environmental storytelling.</p>
+          </div>
+          <div class="team-member">
+            <div class="member-avatar">
+              <img src="images/team-2.jpg" alt="Miguel Sanchez">
+            </div>
+            <h3>Miguel Sanchez</h3>
+            <p class="member-role">Music Director</p>
+            <p class="member-bio">An accomplished composer, Miguel brings natural soundscapes to life with our student orchestra.</p>
+          </div>
+          <div class="team-member">
+            <div class="member-avatar">
+              <img src="images/team-3.jpg" alt="Aisha Patel">
+            </div>
+            <h3>Aisha Patel</h3>
+            <p class="member-role">Choreographer</p>
+            <p class="member-bio">Aisha's innovative movements capture the essence of earth's rhythms through contemporary dance.</p>
+          </div>
+          <div class="team-member">
+            <div class="member-avatar">
+              <img src="images/team-4.jpg" alt="David Chen">
+            </div>
+            <h3>David Chen</h3>
+            <p class="member-role">Set Designer</p>
+            <p class="member-bio">David creates immersive environments using sustainable materials and cutting-edge projection techniques.</p>
+          </div>
+          <div class="team-member">
+            <div class="member-avatar">
+              <img src="images/team-5.jpg" alt="Olivia Wilson">
+            </div>
+            <h3>Olivia Wilson</h3>
+            <p class="member-role">Costume Designer</p>
+            <p class="member-bio">Olivia's eco-friendly costume designs transform students into living embodiments of natural elements.</p>
+          </div>
+          <div class="team-member">
+            <div class="member-avatar">
+              <img src="images/team-6.jpg" alt="Jackson Brown">
+            </div>
+            <h3>Jackson Brown</h3>
+            <p class="member-role">Technical Director</p>
+            <p class="member-bio">Jackson manages all technical aspects of the show, from lighting to sound engineering.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Tickets Section -->
+    <section id="tickets" class="tickets">
+      <div class="container">
+        <h2 class="section-title">Get Your Tickets</h2>
+        <div class="ticket-container">
+          <div class="ticket-info">
+            <h3>Show Details</h3>
+            <div class="ticket-detail">
+              <i class="far fa-calendar-alt"></i>
+              <span>May 27-28, 2025</span>
+            </div>
+            <div class="ticket-detail">
+              <i class="far fa-clock"></i>
+              <span>7:00 PM (Doors open at 6:30 PM)</span>
+            </div>
+            <div class="ticket-detail">
+              <h4>Location:</h4>
+              <p>School Auditorium</p>
+            </div>
+            <div class="ticket-detail">
+              <h4>Ticket Price:</h4>
+              <p>Students: $5 | Adults: $10 | Family Pack (4 tickets): $30</p>
+            </div>
+          </div>
+          <div class="ticket-form">
+            <h3>Reserve Your Seats</h3>
+            <p>Tickets are limited! Reserve yours now and pay at the entrance.</p>
+            <form id="ticketForm">
+              <div class="form-group">
+                <input type="text" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" placeholder="Your Email" required>
+              </div>
+              <div class="form-group">
+                <select id="ticketType" required>
+                  <option value="">Select Ticket Type</option>
+                  <option value="student">Student ($5)</option>
+                  <option value="adult">Adult ($10)</option>
+                  <option value="family">Family Pack ($30)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <input type="number" id="ticketCount" min="1" max="10" placeholder="Number of Tickets" required>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Reserve Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-form-container">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="contactName">Your Name</label>
+              <input id="contactName" name="name" type="text" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Your Email</label>
+              <input id="contactEmail" name="email" type="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" name="message" placeholder="Your message or question" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+            <p class="form-note">Your message will be sent to: xavierceceda@gmail.com</p>
+          </form>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-logo">
+            <div class="logo-circle">
+              <span>NBDK</span>
+            </div>
+            <div>
+              <h3>Napas Bumi Detak Kehidupan</h3>
+              <p>Earth's Breath, Life's Heartbeat</p>
+            </div>
+          </div>
+          <div class="footer-social">
+            <div class="social-icons">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>Contact us at: xavierceceda@gmail.com</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; <span id="currentYear"></span> Napas Bumi Detak Kehidupan. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <script src="script.js"></script>
   </body>
 </html>
