@@ -53,15 +53,15 @@ const Index = () => {
       <Navbar isScrolled={isScrolled} />
       
       {/* Hero Section with Countdown */}
-      <section id="home" className="hero min-h-screen flex items-center justify-center text-white pt-20 bg-cover bg-center bg-fixed" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/lovable-uploads/2d09a040-d5c3-4e45-b438-b7a8615ebafa.png')" }}>
+      <section id="home" className="hero min-h-screen flex items-center justify-center text-white pt-20 bg-cover bg-center bg-fixed" style={{ backgroundImage: "linear-gradient(135deg, rgba(30,58,138,0.9) 0%, rgba(34,197,94,0.7) 100%), url('/lovable-uploads/05ab4a80-1ede-4be0-8095-13cd3160ba2f.png')" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="floating mb-8">
             <div className="w-40 h-40 mx-auto rounded-full bg-nbdk-green/30 border-4 border-nbdk-green/50 flex items-center justify-center">
               <div className="w-32 h-32 rounded-full bg-nbdk-green/40 border-4 border-nbdk-green-light/50 flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/lovable-uploads/2d09a040-d5c3-4e45-b438-b7a8615ebafa.png" 
+                  src="/lovable-uploads/05ab4a80-1ede-4be0-8095-13cd3160ba2f.png" 
                   alt="NBDK Logo" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
             </div>
@@ -155,7 +155,7 @@ const Index = () => {
                 <h3 className="text-2xl font-bold mb-2">Show Details</h3>
                 <div className="flex items-center gap-2 mb-3">
                   <Calendar className="w-5 h-5 text-nbdk-green-light" />
-                  <span>May 27-28, 2025</span>
+                  <span>May 27, 2025</span>
                 </div>
                 <div className="flex items-center gap-2 mb-3">
                   <Clock className="w-5 h-5 text-nbdk-green-light" />
@@ -179,7 +179,7 @@ const Index = () => {
               </div>
               <div className="hidden md:block">
                 <img 
-                  src="/lovable-uploads/2d09a040-d5c3-4e45-b438-b7a8615ebafa.png" 
+                  src="/lovable-uploads/05ab4a80-1ede-4be0-8095-13cd3160ba2f.png" 
                   alt="NBDK Logo" 
                   className="w-full max-w-xs mx-auto rounded-full border-4 border-white/30 shadow-xl"
                 />

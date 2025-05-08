@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Countdown Timer
     function updateCountdown() {
-        const targetDate = new Date('May 28, 2025 19:00:00').getTime();
+        const targetDate = new Date('May 27, 2025 19:00:00').getTime();
         const now = new Date().getTime();
         const timeLeft = targetDate - now;
         
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Logo image (if you upload it)
     const logoImage = document.createElement('img');
-    logoImage.src = 'public/lovable-uploads/fc8d87b8-d341-4c25-b566-d21433062486.png';
+    logoImage.src = 'public/lovable-uploads/05ab4a80-1ede-4be0-8095-13cd3160ba2f.png';
     logoImage.onload = function() {
         const logoCircles = document.querySelectorAll('.logo-circle, .logo-circle-medium');
         logoCircles.forEach(circle => {
@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const imgClone = logoImage.cloneNode(true);
             imgClone.style.width = '100%';
             imgClone.style.height = '100%';
-            imgClone.style.objectFit = 'cover';
+            imgClone.style.objectFit = 'contain';
             circle.appendChild(imgClone);
         });
     };
