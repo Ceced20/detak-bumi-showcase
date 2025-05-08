@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,24 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Custom colors for the event website
+				nbdk: {
+					green: {
+						light: '#86efac',
+						DEFAULT: '#22c55e',
+						dark: '#15803d'
+					},
+					blue: {
+						light: '#93c5fd',
+						DEFAULT: '#1e40af',
+						dark: '#1e3a8a'
+					},
+					neutral: {
+						light: '#f5f5f5',
+						DEFAULT: '#737373',
+						dark: '#262626'
+					}
 				}
 			},
 			borderRadius: {
@@ -70,25 +89,40 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'pulse-slow': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.8' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'gradient-x': {
+					'0%, 100%': {
+						'background-position': '0% 50%'
 					},
-					to: {
-						height: '0'
+					'50%': {
+						'background-position': '100% 50%'
 					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
+				'float': 'float 3s ease-in-out infinite',
+				'gradient-x': 'gradient-x 10s ease infinite'
+			},
+			backgroundImage: {
+				'hero-pattern': "linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('/images/hero-bg.jpg')",
+				'footer-pattern': "linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(21, 128, 61, 0.7))"
 			}
 		}
 	},
