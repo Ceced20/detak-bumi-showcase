@@ -35,14 +35,17 @@ const Index = () => {
     const formData = new FormData(form);
     
     // Here you would typically send this data to a server
-    // For now, we'll just log it and redirect to email
-    console.log("Form submitted to xavierceceda@gmail.com");
-    console.log("Name:", formData.get("name"));
-    console.log("Email:", formData.get("email"));
-    console.log("Message:", formData.get("message"));
+    // For now, we'll just open email client directly
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const message = formData.get("message") as string;
     
-    // Redirect to email client
-    window.location.href = `mailto:xavierceceda@gmail.com?subject=NBDK Show Inquiry&body=Name: ${formData.get("name")}%0D%0AMessage: ${formData.get("message")}`;
+    // Direct mailto link
+    const subject = encodeURIComponent('NBDK Show Inquiry');
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
+    
+    // Open default email client
+    window.open(`mailto:xavierceceda@gmail.com?subject=${subject}&body=${body}`, '_blank');
     
     // Clear form
     form.reset();
@@ -53,23 +56,28 @@ const Index = () => {
       <Navbar isScrolled={isScrolled} />
       
       {/* Hero Section with Countdown */}
-      <section id="home" className="hero min-h-screen flex items-center justify-center text-white pt-20 bg-cover bg-center bg-fixed" style={{ backgroundImage: "linear-gradient(135deg, rgba(30,58,138,0.9) 0%, rgba(34,197,94,0.7) 100%), url('/lovable-uploads/05ab4a80-1ede-4be0-8095-13cd3160ba2f.png')" }}>
+      <section id="home" className="hero min-h-screen flex items-center justify-center text-white pt-20 bg-cover bg-center bg-fixed" 
+        style={{ 
+          backgroundImage: "linear-gradient(90deg, rgba(240,240,240,0.8) 0%, rgba(76,175,80,0.6) 50%, rgba(240,240,240,0.8) 100%), url('/lovable-uploads/d0cd99b2-1a73-4485-a9a8-1c27ffa15131.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center"
+        }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="floating mb-8">
             <div className="w-40 h-40 mx-auto rounded-full bg-nbdk-green/30 border-4 border-nbdk-green/50 flex items-center justify-center">
               <div className="w-32 h-32 rounded-full bg-nbdk-green/40 border-4 border-nbdk-green-light/50 flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/lovable-uploads/05ab4a80-1ede-4be0-8095-13cd3160ba2f.png" 
+                  src="/lovable-uploads/d0cd99b2-1a73-4485-a9a8-1c27ffa15131.png" 
                   alt="NBDK Logo" 
                   className="w-full h-full object-contain"
                 />
               </div>
             </div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-pulse-slow text-shadow">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-pulse-slow text-shadow text-nbdk-blue-dark">
             Napas Bumi<br />Detak Kehidupan
           </h1>
-          <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-shadow-sm">
+          <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-shadow-sm text-nbdk-blue-dark">
             An extraordinary celebration of nature's rhythm through music, dance, and art. 
             Presented by our talented students.
           </p>
@@ -83,7 +91,7 @@ const Index = () => {
             </a>
             <a 
               href="#about" 
-              className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white font-bold py-3 px-8 rounded-full border-2 border-white/50 text-lg transition duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2"
+              className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-nbdk-blue-dark font-bold py-3 px-8 rounded-full border-2 border-nbdk-blue-dark/50 text-lg transition duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2"
             >
               Learn More 
               <ChevronDown className="w-5 h-5 animate-bounce" />
@@ -92,7 +100,7 @@ const Index = () => {
           
           {/* Countdown Timer */}
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-xl mb-6 flex items-center justify-center gap-2">
+            <h3 className="text-xl mb-6 flex items-center justify-center gap-2 text-nbdk-blue-dark">
               <Clock className="w-5 h-5" />
               Show Starts In:
             </h3>
@@ -102,7 +110,7 @@ const Index = () => {
       </section>
       
       {/* About Section */}
-      <section id="about" className="py-20 bg-gradient-to-b from-nbdk-blue-dark to-nbdk-blue text-white">
+      <section id="about" className="py-20 bg-gradient-to-r from-gray-100 via-green-50 to-gray-100 text-nbdk-blue-dark">
         <div className="container mx-auto px-4">
           <h2 className="section-title">About The Show</h2>
           <div className="max-w-4xl mx-auto">
@@ -146,19 +154,19 @@ const Index = () => {
       <TeamSection />
       
       {/* Tickets Section */}
-      <section id="tickets" className="py-20 bg-gradient-to-b from-nbdk-blue/90 to-nbdk-blue-dark text-white">
+      <section id="tickets" className="py-20 bg-gradient-to-r from-gray-100 via-green-50 to-gray-100 text-nbdk-blue-dark">
         <div className="container mx-auto px-4">
           <h2 className="section-title">Get Your Tickets</h2>
-          <div className="max-w-4xl mx-auto bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-xl">
+          <div className="max-w-4xl mx-auto bg-white/70 backdrop-blur-md rounded-2xl p-8 shadow-xl">
             <div className="grid md:grid-cols-2 gap-8">
               <div className="flex flex-col justify-center">
                 <h3 className="text-2xl font-bold mb-2">Show Details</h3>
                 <div className="flex items-center gap-2 mb-3">
-                  <Calendar className="w-5 h-5 text-nbdk-green-light" />
+                  <Calendar className="w-5 h-5 text-nbdk-green" />
                   <span>May 27, 2025</span>
                 </div>
                 <div className="flex items-center gap-2 mb-3">
-                  <Clock className="w-5 h-5 text-nbdk-green-light" />
+                  <Clock className="w-5 h-5 text-nbdk-green" />
                   <span>7:00 PM (Doors open at 6:30 PM)</span>
                 </div>
                 <div className="mb-3">
@@ -170,18 +178,23 @@ const Index = () => {
                   <p>Students: $5 | Adults: $10 | Family Pack (4 tickets): $30</p>
                 </div>
                 <Button 
-                  type="submit" 
+                  type="button" 
                   className="w-full bg-nbdk-green hover:bg-nbdk-green-dark text-white font-bold shadow-lg"
-                  onClick={() => window.location.href = `mailto:xavierceceda@gmail.com?subject=NBDK Show Ticket Request&body=I would like to request tickets for the NBDK show.`}
+                  onClick={() => {
+                    // Direct mailto link
+                    const subject = encodeURIComponent('NBDK Show Ticket Request');
+                    const body = encodeURIComponent('I would like to request tickets for the NBDK show.');
+                    window.open(`mailto:xavierceceda@gmail.com?subject=${subject}&body=${body}`, '_blank');
+                  }}
                 >
                   Request Tickets
                 </Button>
               </div>
-              <div className="hidden md:block">
+              <div className="hidden md:flex items-center justify-center">
                 <img 
-                  src="/lovable-uploads/05ab4a80-1ede-4be0-8095-13cd3160ba2f.png" 
+                  src="/lovable-uploads/d0cd99b2-1a73-4485-a9a8-1c27ffa15131.png" 
                   alt="NBDK Logo" 
-                  className="w-full max-w-xs mx-auto rounded-full border-4 border-white/30 shadow-xl"
+                  className="w-full max-w-xs mx-auto rounded-full border-4 border-nbdk-green/30 shadow-xl"
                 />
               </div>
             </div>
@@ -190,7 +203,7 @@ const Index = () => {
       </section>
       
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-nbdk-neutral-dark text-white">
+      <section id="contact" className="py-20 bg-gradient-to-b from-gray-100 to-gray-200 text-nbdk-blue-dark">
         <div className="container mx-auto px-4">
           <h2 className="section-title">Contact Us</h2>
           <div className="max-w-2xl mx-auto">
@@ -201,7 +214,7 @@ const Index = () => {
                   id="name"
                   name="name"
                   type="text" 
-                  className="bg-white/10 border-white/30"
+                  className="bg-white/70 border-nbdk-green/30"
                   placeholder="Enter your name"
                   required
                 />
@@ -212,7 +225,7 @@ const Index = () => {
                   id="email"
                   name="email"
                   type="email" 
-                  className="bg-white/10 border-white/30"
+                  className="bg-white/70 border-nbdk-green/30"
                   placeholder="Enter your email"
                   required
                 />
@@ -222,7 +235,7 @@ const Index = () => {
                 <Textarea 
                   id="message"
                   name="message"
-                  className="bg-white/10 border-white/30 min-h-32"
+                  className="bg-white/70 border-nbdk-green/30 min-h-32"
                   placeholder="Your message or question"
                   required
                 />
@@ -234,7 +247,7 @@ const Index = () => {
                 >
                   Send Message
                 </Button>
-                <p className="text-xs text-center mt-2 text-nbdk-neutral-light/70">
+                <p className="text-xs text-center mt-2 text-nbdk-blue-dark/70">
                   Your message will be sent to: xavierceceda@gmail.com
                 </p>
               </div>

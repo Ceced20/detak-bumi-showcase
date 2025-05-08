@@ -121,14 +121,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const ticketType = document.getElementById('ticketType').value;
             const ticketCount = document.getElementById('ticketCount').value;
             
-            // Prepare email body with form data
+            // Direct mailto link - updated to fix email sending
             const subject = 'NBDK Show Ticket Reservation';
             const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0ATicket Type: ${ticketType}%0D%0ANumber of Tickets: ${ticketCount}`;
             
-            // Send email
-            window.location.href = `mailto:xavierceceda@gmail.com?subject=${subject}&body=${body}`;
+            // Open default email client
+            window.open(`mailto:xavierceceda@gmail.com?subject=${subject}&body=${body}`, '_blank');
             
-            // Form feedback (you could add a success message here)
+            // Form feedback
             alert('Your ticket reservation has been sent! We will contact you shortly to confirm.');
             
             // Reset form
@@ -146,12 +146,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = document.getElementById('contactEmail').value;
             const message = document.getElementById('contactMessage').value;
             
-            // Prepare email body with form data
+            // Direct mailto link - updated to fix email sending
             const subject = 'NBDK Show Contact Form';
             const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0AMessage: ${message}`;
             
-            // Send email
-            window.location.href = `mailto:xavierceceda@gmail.com?subject=${subject}&body=${body}`;
+            // Open default email client
+            window.open(`mailto:xavierceceda@gmail.com?subject=${subject}&body=${body}`, '_blank');
             
             // Form feedback
             alert('Your message has been sent! We will get back to you soon.');
@@ -221,9 +221,9 @@ document.addEventListener('DOMContentLoaded', function() {
         img.addEventListener('contextmenu', e => e.preventDefault());
     });
     
-    // Logo image (if you upload it)
+    // Logo image - updated to use the new logo
     const logoImage = document.createElement('img');
-    logoImage.src = 'public/lovable-uploads/05ab4a80-1ede-4be0-8095-13cd3160ba2f.png';
+    logoImage.src = 'public/lovable-uploads/d0cd99b2-1a73-4485-a9a8-1c27ffa15131.png';
     logoImage.onload = function() {
         const logoCircles = document.querySelectorAll('.logo-circle, .logo-circle-medium');
         logoCircles.forEach(circle => {
