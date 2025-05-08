@@ -1,9 +1,8 @@
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Separator } from "@/components/ui/separator";
 import { Calendar, ChevronDown, Clock } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -54,16 +53,20 @@ const Index = () => {
       <Navbar isScrolled={isScrolled} />
       
       {/* Hero Section with Countdown */}
-      <section id="home" className="hero min-h-screen flex items-center justify-center text-white pt-20">
+      <section id="home" className="hero min-h-screen flex items-center justify-center text-white pt-20 bg-cover bg-center bg-fixed" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/lovable-uploads/2d09a040-d5c3-4e45-b438-b7a8615ebafa.png')" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="floating mb-8">
             <div className="w-40 h-40 mx-auto rounded-full bg-nbdk-green/30 border-4 border-nbdk-green/50 flex items-center justify-center">
               <div className="w-32 h-32 rounded-full bg-nbdk-green/40 border-4 border-nbdk-green-light/50 flex items-center justify-center overflow-hidden">
-                <span className="text-4xl font-bold">NBDK</span>
+                <img 
+                  src="/lovable-uploads/2d09a040-d5c3-4e45-b438-b7a8615ebafa.png" 
+                  alt="NBDK Logo" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-pulse-slow">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-pulse-slow text-shadow">
             Napas Bumi<br />Detak Kehidupan
           </h1>
           <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-shadow-sm">
@@ -93,7 +96,7 @@ const Index = () => {
               <Clock className="w-5 h-5" />
               Show Starts In:
             </h3>
-            <CountdownTimer targetDate="May 28, 2025" />
+            <CountdownTimer targetDate="May 27, 2025" />
           </div>
         </div>
       </section>
@@ -152,7 +155,7 @@ const Index = () => {
                 <h3 className="text-2xl font-bold mb-2">Show Details</h3>
                 <div className="flex items-center gap-2 mb-3">
                   <Calendar className="w-5 h-5 text-nbdk-green-light" />
-                  <span>May 28, 2025</span>
+                  <span>May 27-28, 2025</span>
                 </div>
                 <div className="flex items-center gap-2 mb-3">
                   <Clock className="w-5 h-5 text-nbdk-green-light" />
@@ -166,59 +169,20 @@ const Index = () => {
                   <h4 className="font-semibold mb-1">Ticket Price:</h4>
                   <p>Students: $5 | Adults: $10 | Family Pack (4 tickets): $30</p>
                 </div>
+                <Button 
+                  type="submit" 
+                  className="w-full bg-nbdk-green hover:bg-nbdk-green-dark text-white font-bold shadow-lg"
+                  onClick={() => window.location.href = `mailto:xavierceceda@gmail.com?subject=NBDK Show Ticket Request&body=I would like to request tickets for the NBDK show.`}
+                >
+                  Request Tickets
+                </Button>
               </div>
-              <div>
-                <div className="bg-white/20 p-5 rounded-lg border border-white/30 shadow-lg">
-                  <h3 className="text-xl font-bold mb-3 text-center">Reserve Your Seats</h3>
-                  <p className="mb-4 text-sm text-center">
-                    Tickets are limited! Reserve yours now and pay at the entrance.
-                  </p>
-                  <form className="space-y-4">
-                    <div>
-                      <Input 
-                        type="text" 
-                        placeholder="Your Name" 
-                        className="bg-white/30 border-white/20 placeholder-white/70 text-white"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <Input 
-                        type="email" 
-                        placeholder="Your Email" 
-                        className="bg-white/30 border-white/20 placeholder-white/70 text-white"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <select 
-                        className="w-full px-3 py-2 bg-white/30 border border-white/20 rounded-md text-white"
-                        required
-                      >
-                        <option value="" className="bg-nbdk-blue text-white">Select Ticket Type</option>
-                        <option value="student" className="bg-nbdk-blue text-white">Student ($5)</option>
-                        <option value="adult" className="bg-nbdk-blue text-white">Adult ($10)</option>
-                        <option value="family" className="bg-nbdk-blue text-white">Family Pack ($30)</option>
-                      </select>
-                    </div>
-                    <div>
-                      <Input 
-                        type="number" 
-                        min="1" 
-                        max="10" 
-                        placeholder="Number of Tickets" 
-                        className="bg-white/30 border-white/20 placeholder-white/70 text-white"
-                        required
-                      />
-                    </div>
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-nbdk-green hover:bg-nbdk-green-dark text-white font-bold shadow-lg"
-                    >
-                      Reserve Now
-                    </Button>
-                  </form>
-                </div>
+              <div className="hidden md:block">
+                <img 
+                  src="/lovable-uploads/2d09a040-d5c3-4e45-b438-b7a8615ebafa.png" 
+                  alt="NBDK Logo" 
+                  className="w-full max-w-xs mx-auto rounded-full border-4 border-white/30 shadow-xl"
+                />
               </div>
             </div>
           </div>
