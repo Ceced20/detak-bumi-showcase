@@ -10,9 +10,12 @@ import ScheduleSection from "@/components/ScheduleSection";
 import TeamSection from "@/components/TeamSection";
 import GallerySection from "@/components/GallerySection";
 import CountdownTimer from "@/components/CountdownTimer";
+import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
   
   // Add scroll event listener to track scrolling for navbar transparency
   useEffect(() => {
@@ -29,26 +32,42 @@ const Index = () => {
   }, []);
 
   // Form submission handling
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const form = e.currentTarget as HTMLFormElement;
-    const formData = new FormData(form);
+    setIsSubmitting(true);
     
-    // Here you would typically send this data to a server
-    // For now, we'll just open email client directly
-    const name = formData.get("name") as string;
-    const email = formData.get("email") as string;
-    const message = formData.get("message") as string;
-    
-    // Direct mailto link
-    const subject = encodeURIComponent('NBDK Show Inquiry');
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
-    
-    // Open default email client
-    window.open(`mailto:xavierceceda@gmail.com?subject=${subject}&body=${body}`, '_blank');
-    
-    // Clear form
-    form.reset();
+    try {
+      const form = e.currentTarget as HTMLFormElement;
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        form.reset();
+        toast({
+          title: "Message sent!",
+          description: "We'll get back to you as soon as possible.",
+          variant: "default",
+        });
+      } else {
+        throw new Error(data.error || "Form submission failed");
+      }
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+      console.error("Form submission error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -148,12 +167,17 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <h2 className="section-title">Contact Us</h2>
           <div className="max-w-2xl mx-auto">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form 
+              action="https://formspree.io/f/xjkwoypg" 
+              method="POST"
+              onSubmit={handleSubmit} 
+              className="space-y-6"
+            >
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name</label>
                 <Input 
                   id="name"
-                  name="name"
+                  name="Name"
                   type="text" 
                   className="bg-white/70 border-nbdk-green/30"
                   placeholder="Enter your name"
@@ -164,7 +188,7 @@ const Index = () => {
                 <label htmlFor="email" className="block text-sm font-medium mb-2">Your Email</label>
                 <Input 
                   id="email"
-                  name="email"
+                  name="Email"
                   type="email" 
                   className="bg-white/70 border-nbdk-green/30"
                   placeholder="Enter your email"
@@ -175,7 +199,7 @@ const Index = () => {
                 <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
                 <Textarea 
                   id="message"
-                  name="message"
+                  name="Message"
                   className="bg-white/70 border-nbdk-green/30 min-h-32"
                   placeholder="Your message or question"
                   required
@@ -185,11 +209,12 @@ const Index = () => {
                 <Button 
                   type="submit"
                   className="w-full bg-nbdk-green hover:bg-nbdk-green-dark text-white font-semibold py-3"
+                  disabled={isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
                 <p className="text-xs text-center mt-2 text-nbdk-blue-dark/70">
-                  Your message will be sent to: xavierceceda@gmail.com
+                  Your message will be processed by Formspree
                 </p>
               </div>
             </form>
