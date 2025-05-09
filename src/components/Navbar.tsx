@@ -42,7 +42,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
           className="flex items-center gap-2 text-white font-bold text-xl"
         >
           <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-md">
-            <img src="/lovable-uploads/cc917a8c-3897-4d44-a83c-67473d6afb0d.png" alt="NBDK" className="w-full h-full object-cover" />
+            <img src="/lovable-uploads/63ddf673-224c-4942-b29e-0b41b7e581b7.png" alt="NBDK" className="w-full h-full object-cover" />
           </div>
           <span className="hidden md:inline">Napas Bumi Detak Kehidupan</span>
         </a>

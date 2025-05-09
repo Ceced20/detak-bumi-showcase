@@ -56,17 +56,16 @@ const Index = () => {
       <Navbar isScrolled={isScrolled} />
       
       {/* Hero Section with Countdown */}
-      <section id="home" className="min-h-screen flex items-center justify-center text-white pt-20 bg-cover bg-center bg-fixed" 
+      <section id="home" className="min-h-screen flex items-center justify-center text-white pt-20" 
         style={{ 
-          backgroundImage: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/lovable-uploads/9f06108f-c553-42a5-9c88-1c7d5f8ef910.png')",
+          background: "linear-gradient(to bottom right, #243949, #517fa4)",
           backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundColor: "#34507a" /* Fallback color */
+          backgroundPosition: "center"
         }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-8">
             <img 
-              src="/lovable-uploads/cc917a8c-3897-4d44-a83c-67473d6afb0d.png" 
+              src="/lovable-uploads/63ddf673-224c-4942-b29e-0b41b7e581b7.png" 
               alt="NBDK Logo" 
               className="w-40 h-40 mx-auto rounded-full border-4 border-white/30"
             />

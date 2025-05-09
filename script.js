@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     // Set current year in footer
     document.getElementById('currentYear').textContent = new Date().getFullYear();
@@ -124,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
             
             // Open default email client
-            window.location.href = `mailto:xavierceceda@gmail.com?subject=${subject}&body=${body}`;
+            window.open(`mailto:xavierceceda@gmail.com?subject=${subject}&body=${body}`, '_blank');
             
             // Form feedback
             alert('Your message has been sent! We will get back to you soon.');
@@ -196,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Logo image - updated to use the new logo
     const logoImage = document.createElement('img');
-    logoImage.src = 'public/lovable-uploads/cc917a8c-3897-4d44-a83c-67473d6afb0d.png';
+    logoImage.src = 'public/lovable-uploads/63ddf673-224c-4942-b29e-0b41b7e581b7.png';
     logoImage.onload = function() {
         const logoCircles = document.querySelectorAll('.logo-circle, .logo-circle-medium');
         logoCircles.forEach(circle => {
