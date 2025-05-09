@@ -119,12 +119,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = document.getElementById('contactEmail').value;
             const message = document.getElementById('contactMessage').value;
             
-            // Open email client with form data
+            // Direct mailto link
             const subject = encodeURIComponent('NBDK Show Contact Form');
             const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
             
-            // Open email client directly
-            window.open(`mailto:xavierceceda@gmail.com?subject=${subject}&body=${body}`, '_blank');
+            // Open default email client
+            window.location.href = `mailto:xavierceceda@gmail.com?subject=${subject}&body=${body}`;
             
             // Form feedback
             alert('Your message has been sent! We will get back to you soon.');
