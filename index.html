@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,6 +21,23 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
+    
+    <style>
+      /* Additional styles for new background */
+      .hero {
+        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('public/lovable-uploads/9f06108f-c553-42a5-9c88-1c7d5f8ef910.png');
+        background-size: cover;
+        background-position: center;
+        background-color: #34507a; /* Fallback color */
+      }
+      
+      .new-logo {
+        max-width: 200px;
+        border-radius: 50%;
+        margin: 0 auto;
+        display: block;
+      }
+    </style>
   </head>
 
   <body>
@@ -41,7 +57,6 @@
           <a href="#schedule" class="nav-link">Schedule</a>
           <a href="#gallery" class="nav-link">Gallery</a>
           <a href="#team" class="nav-link">Team</a>
-          <a href="#tickets" class="nav-link">Tickets</a>
           <a href="#contact" class="nav-link">Contact</a>
         </div>
         
@@ -57,20 +72,15 @@
     <section id="home" class="hero">
       <div class="container">
         <div class="floating">
-          <div class="logo-circle-large">
-            <div class="logo-circle-medium">
-              <span>NBDK</span>
-            </div>
-          </div>
+          <img src="public/lovable-uploads/cc917a8c-3897-4d44-a83c-67473d6afb0d.png" alt="NBDK Logo" class="new-logo">
         </div>
-        <h1 class="animate-pulse-slow">Napas Bumi<br>Detak Kehidupan</h1>
-        <p class="hero-subtitle">
-          An extraordinary celebration of nature's rhythm through music, dance, and art. 
-          Presented by our talented students.
+        <h1 class="animate-pulse-slow" style="color: white;">Napas Bumi<br>Detak Kehidupan</h1>
+        <p class="hero-subtitle" style="color: white;">
+          Join us for an unforgettable celebration of Earth and Life through art,
+          music, and dance at our school's annual environmental showcase.
         </p>
         
         <div class="hero-buttons">
-          <a href="#tickets" class="btn btn-primary">Get Tickets</a>
           <a href="#about" class="btn btn-secondary">
             Learn More 
             <i class="fas fa-chevron-down animate-bounce"></i>
@@ -78,10 +88,10 @@
         </div>
         
         <!-- Countdown Timer -->
-        <div class="countdown-container">
+        <div class="countdown-container" style="color: white;">
           <h3>
             <i class="far fa-clock"></i>
-            Show Starts In:
+            Show Starts: May 27th
           </h3>
           <div class="countdown-grid">
             <div class="countdown-item">
@@ -140,7 +150,7 @@
         <h2 class="section-title">Event Schedule</h2>
         <div class="date-container">
           <i class="far fa-calendar-alt"></i>
-          <span>May 27-28, 2025</span>
+          <span>May 27, 2025</span>
         </div>
         
         <div class="schedule-tabs">
@@ -360,58 +370,6 @@
             <h3>Jackson Brown</h3>
             <p class="member-role">Technical Director</p>
             <p class="member-bio">Jackson manages all technical aspects of the show, from lighting to sound engineering.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Tickets Section -->
-    <section id="tickets" class="tickets">
-      <div class="container">
-        <h2 class="section-title">Get Your Tickets</h2>
-        <div class="ticket-container">
-          <div class="ticket-info">
-            <h3>Show Details</h3>
-            <div class="ticket-detail">
-              <i class="far fa-calendar-alt"></i>
-              <span>May 27-28, 2025</span>
-            </div>
-            <div class="ticket-detail">
-              <i class="far fa-clock"></i>
-              <span>7:00 PM (Doors open at 6:30 PM)</span>
-            </div>
-            <div class="ticket-detail">
-              <h4>Location:</h4>
-              <p>School Auditorium</p>
-            </div>
-            <div class="ticket-detail">
-              <h4>Ticket Price:</h4>
-              <p>Students: $5 | Adults: $10 | Family Pack (4 tickets): $30</p>
-            </div>
-          </div>
-          <div class="ticket-form">
-            <h3>Reserve Your Seats</h3>
-            <p>Tickets are limited! Reserve yours now and pay at the entrance.</p>
-            <form id="ticketForm">
-              <div class="form-group">
-                <input type="text" id="name" placeholder="Your Name" required>
-              </div>
-              <div class="form-group">
-                <input type="email" id="email" placeholder="Your Email" required>
-              </div>
-              <div class="form-group">
-                <select id="ticketType" required>
-                  <option value="">Select Ticket Type</option>
-                  <option value="student">Student ($5)</option>
-                  <option value="adult">Adult ($10)</option>
-                  <option value="family">Family Pack ($30)</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <input type="number" id="ticketCount" min="1" max="10" placeholder="Number of Tickets" required>
-              </div>
-              <button type="submit" class="btn btn-primary btn-block">Reserve Now</button>
-            </form>
           </div>
         </div>
       </div>

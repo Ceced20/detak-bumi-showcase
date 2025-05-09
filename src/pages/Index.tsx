@@ -56,42 +56,33 @@ const Index = () => {
       <Navbar isScrolled={isScrolled} />
       
       {/* Hero Section with Countdown */}
-      <section id="home" className="hero min-h-screen flex items-center justify-center text-white pt-20 bg-cover bg-center bg-fixed" 
+      <section id="home" className="min-h-screen flex items-center justify-center text-white pt-20 bg-cover bg-center bg-fixed" 
         style={{ 
-          backgroundImage: "linear-gradient(90deg, rgba(240,240,240,0.8) 0%, rgba(76,175,80,0.6) 50%, rgba(240,240,240,0.8) 100%), url('/lovable-uploads/d0cd99b2-1a73-4485-a9a8-1c27ffa15131.png')",
+          backgroundImage: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/lovable-uploads/9f06108f-c553-42a5-9c88-1c7d5f8ef910.png')",
           backgroundSize: "cover",
-          backgroundPosition: "center"
+          backgroundPosition: "center",
+          backgroundColor: "#34507a" /* Fallback color */
         }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="floating mb-8">
-            <div className="w-40 h-40 mx-auto rounded-full bg-nbdk-green/30 border-4 border-nbdk-green/50 flex items-center justify-center">
-              <div className="w-32 h-32 rounded-full bg-nbdk-green/40 border-4 border-nbdk-green-light/50 flex items-center justify-center overflow-hidden">
-                <img 
-                  src="/lovable-uploads/d0cd99b2-1a73-4485-a9a8-1c27ffa15131.png" 
-                  alt="NBDK Logo" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
-            </div>
+          <div className="mb-8">
+            <img 
+              src="/lovable-uploads/cc917a8c-3897-4d44-a83c-67473d6afb0d.png" 
+              alt="NBDK Logo" 
+              className="w-40 h-40 mx-auto rounded-full border-4 border-white/30"
+            />
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-pulse-slow text-shadow text-nbdk-blue-dark">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-pulse-slow text-white">
             Napas Bumi<br />Detak Kehidupan
           </h1>
-          <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-shadow-sm text-nbdk-blue-dark">
-            An extraordinary celebration of nature's rhythm through music, dance, and art. 
-            Presented by our talented students.
+          <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-white">
+            Join us for an unforgettable celebration of Earth and Life through art,
+            music, and dance at our school's annual environmental showcase.
           </p>
           
-          <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-16">
-            <a 
-              href="#tickets" 
-              className="bg-nbdk-green hover:bg-nbdk-green-dark text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg"
-            >
-              Get Tickets
-            </a>
+          <div className="flex justify-center items-center gap-4 mb-16">
             <a 
               href="#about" 
-              className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-nbdk-blue-dark font-bold py-3 px-8 rounded-full border-2 border-nbdk-blue-dark/50 text-lg transition duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2"
+              className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white font-bold py-3 px-8 rounded-full border-2 border-white/50 text-lg transition duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2"
             >
               Learn More 
               <ChevronDown className="w-5 h-5 animate-bounce" />
@@ -100,9 +91,9 @@ const Index = () => {
           
           {/* Countdown Timer */}
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-xl mb-6 flex items-center justify-center gap-2 text-nbdk-blue-dark">
+            <h3 className="text-xl mb-6 flex items-center justify-center gap-2 text-white">
               <Clock className="w-5 h-5" />
-              Show Starts In:
+              Show Starts: May 27th
             </h3>
             <CountdownTimer targetDate="May 27, 2025" />
           </div>
@@ -152,55 +143,6 @@ const Index = () => {
       
       {/* Team Section */}
       <TeamSection />
-      
-      {/* Tickets Section */}
-      <section id="tickets" className="py-20 bg-gradient-to-r from-gray-100 via-green-50 to-gray-100 text-nbdk-blue-dark">
-        <div className="container mx-auto px-4">
-          <h2 className="section-title">Get Your Tickets</h2>
-          <div className="max-w-4xl mx-auto bg-white/70 backdrop-blur-md rounded-2xl p-8 shadow-xl">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="flex flex-col justify-center">
-                <h3 className="text-2xl font-bold mb-2">Show Details</h3>
-                <div className="flex items-center gap-2 mb-3">
-                  <Calendar className="w-5 h-5 text-nbdk-green" />
-                  <span>May 27, 2025</span>
-                </div>
-                <div className="flex items-center gap-2 mb-3">
-                  <Clock className="w-5 h-5 text-nbdk-green" />
-                  <span>7:00 PM (Doors open at 6:30 PM)</span>
-                </div>
-                <div className="mb-3">
-                  <h4 className="font-semibold mb-1">Location:</h4>
-                  <p>School Auditorium</p>
-                </div>
-                <div className="mb-6">
-                  <h4 className="font-semibold mb-1">Ticket Price:</h4>
-                  <p>Students: $5 | Adults: $10 | Family Pack (4 tickets): $30</p>
-                </div>
-                <Button 
-                  type="button" 
-                  className="w-full bg-nbdk-green hover:bg-nbdk-green-dark text-white font-bold shadow-lg"
-                  onClick={() => {
-                    // Direct mailto link
-                    const subject = encodeURIComponent('NBDK Show Ticket Request');
-                    const body = encodeURIComponent('I would like to request tickets for the NBDK show.');
-                    window.open(`mailto:xavierceceda@gmail.com?subject=${subject}&body=${body}`, '_blank');
-                  }}
-                >
-                  Request Tickets
-                </Button>
-              </div>
-              <div className="hidden md:flex items-center justify-center">
-                <img 
-                  src="/lovable-uploads/d0cd99b2-1a73-4485-a9a8-1c27ffa15131.png" 
-                  alt="NBDK Logo" 
-                  className="w-full max-w-xs mx-auto rounded-full border-4 border-nbdk-green/30 shadow-xl"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gradient-to-b from-gray-100 to-gray-200 text-nbdk-blue-dark">

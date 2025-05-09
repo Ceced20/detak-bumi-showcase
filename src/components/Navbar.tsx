@@ -42,7 +42,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
           className="flex items-center gap-2 text-white font-bold text-xl"
         >
           <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-md">
-            <span className="text-nbdk-blue-dark text-xs font-bold">NBDK</span>
+            <img src="/lovable-uploads/cc917a8c-3897-4d44-a83c-67473d6afb0d.png" alt="NBDK" className="w-full h-full object-cover" />
           </div>
           <span className="hidden md:inline">Napas Bumi Detak Kehidupan</span>
         </a>
@@ -54,7 +54,6 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
           <a href="#schedule" className="nav-link" onClick={handleNavLinkClick}>Schedule</a>
           <a href="#gallery" className="nav-link" onClick={handleNavLinkClick}>Gallery</a>
           <a href="#team" className="nav-link" onClick={handleNavLinkClick}>Team</a>
-          <a href="#tickets" className="nav-link" onClick={handleNavLinkClick}>Tickets</a>
           <a href="#contact" className="nav-link" onClick={handleNavLinkClick}>Contact</a>
         </div>
         
@@ -95,7 +94,6 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
             <a href="#schedule" className="text-2xl nav-link" onClick={handleNavLinkClick}>Schedule</a>
             <a href="#gallery" className="text-2xl nav-link" onClick={handleNavLinkClick}>Gallery</a>
             <a href="#team" className="text-2xl nav-link" onClick={handleNavLinkClick}>Team</a>
-            <a href="#tickets" className="text-2xl nav-link" onClick={handleNavLinkClick}>Tickets</a>
             <a href="#contact" className="text-2xl nav-link" onClick={handleNavLinkClick}>Contact</a>
           </div>
         </div>

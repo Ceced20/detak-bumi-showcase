@@ -109,33 +109,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Form Submissions
-    // Ticket form
-    const ticketForm = document.getElementById('ticketForm');
-    if (ticketForm) {
-        ticketForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const ticketType = document.getElementById('ticketType').value;
-            const ticketCount = document.getElementById('ticketCount').value;
-            
-            // Direct mailto link - updated to fix email sending
-            const subject = 'NBDK Show Ticket Reservation';
-            const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0ATicket Type: ${ticketType}%0D%0ANumber of Tickets: ${ticketCount}`;
-            
-            // Open default email client
-            window.open(`mailto:xavierceceda@gmail.com?subject=${subject}&body=${body}`, '_blank');
-            
-            // Form feedback
-            alert('Your ticket reservation has been sent! We will contact you shortly to confirm.');
-            
-            // Reset form
-            ticketForm.reset();
-        });
-    }
-    
     // Contact form
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
@@ -146,12 +119,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = document.getElementById('contactEmail').value;
             const message = document.getElementById('contactMessage').value;
             
-            // Direct mailto link - updated to fix email sending
-            const subject = 'NBDK Show Contact Form';
-            const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0AMessage: ${message}`;
+            // Direct mailto link
+            const subject = encodeURIComponent('NBDK Show Contact Form');
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
             
             // Open default email client
-            window.open(`mailto:xavierceceda@gmail.com?subject=${subject}&body=${body}`, '_blank');
+            window.location.href = `mailto:xavierceceda@gmail.com?subject=${subject}&body=${body}`;
             
             // Form feedback
             alert('Your message has been sent! We will get back to you soon.');
@@ -223,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Logo image - updated to use the new logo
     const logoImage = document.createElement('img');
-    logoImage.src = 'public/lovable-uploads/d0cd99b2-1a73-4485-a9a8-1c27ffa15131.png';
+    logoImage.src = 'public/lovable-uploads/cc917a8c-3897-4d44-a83c-67473d6afb0d.png';
     logoImage.onload = function() {
         const logoCircles = document.querySelectorAll('.logo-circle, .logo-circle-medium');
         logoCircles.forEach(circle => {
