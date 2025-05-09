@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -47,6 +46,9 @@ const Index = () => {
     // Open default email client
     window.open(`mailto:xavierceceda@gmail.com?subject=${subject}&body=${body}`, '_blank');
     
+    // Alert to notify the user
+    alert('Your message has been sent! We will get back to you soon.');
+    
     // Clear form
     form.reset();
   };
@@ -55,18 +57,12 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar isScrolled={isScrolled} />
       
-      {/* Hero Section with Countdown */}
-      <section id="home" className="min-h-screen flex items-center justify-center text-white pt-20 bg-cover bg-center bg-fixed" 
-        style={{ 
-          backgroundImage: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/lovable-uploads/9f06108f-c553-42a5-9c88-1c7d5f8ef910.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundColor: "#34507a" /* Fallback color */
-        }}>
+      {/* Hero Section with Countdown - Updated with gradient background */}
+      <section id="home" className="min-h-screen flex items-center justify-center text-white pt-20 bg-gradient-to-br from-nbdk-blue via-nbdk-blue-dark to-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-8">
             <img 
-              src="/lovable-uploads/cc917a8c-3897-4d44-a83c-67473d6afb0d.png" 
+              src="/lovable-uploads/2d09a040-d5c3-4e45-b438-b7a8615ebafa.png" 
               alt="NBDK Logo" 
               className="w-40 h-40 mx-auto rounded-full border-4 border-white/30"
             />
