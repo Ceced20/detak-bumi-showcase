@@ -1,4 +1,3 @@
-
 /* Base Styles */
 :root {
   --nbdk-blue-dark: #1e3a8a;  /* Dark blue from logo */
@@ -660,59 +659,137 @@ section {
 
 /* Tickets Section */
 .tickets {
-  background: linear-gradient(to bottom, var(--nbdk-blue), var(--nbdk-blue-dark));
-  color: var(--white);
+  padding: 80px 0;
+  background: linear-gradient(to right, #f9f9f9, #e0f5e9);
 }
 
-.ticket-container {
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(4px);
-  border-radius: 16px;
-  padding: 32px;
+.ticket-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   max-width: 800px;
   margin: 0 auto;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(74, 180, 111, 0.2);
 }
 
-.ticket-info {
-  margin-bottom: 32px;
+.ticket-header {
+  background: rgba(74, 180, 111, 0.1);
+  padding: 20px;
+  border-bottom: 1px solid rgba(74, 180, 111, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.ticket-info h3 {
-  font-size: 1.5rem;
-  margin-bottom: 16px;
+.ticket-header i {
+  color: #4ab46f;
+  font-size: 24px;
 }
 
-.ticket-detail {
-  margin-bottom: 12px;
+.ticket-header h3 {
+  margin: 0;
+  color: #243949;
+  font-size: 20px;
 }
 
-.ticket-detail i {
-  color: var(--nbdk-green-light);
-  margin-right: 8px;
+.ticket-content {
+  padding: 20px;
 }
 
-.ticket-detail h4 {
-  font-weight: 600;
-  margin-bottom: 4px;
+.ticket-date {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: #243949;
 }
 
-.ticket-form {
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 24px;
+.ticket-date i {
+  color: #4ab46f;
+}
+
+.ticket-date span {
+  font-weight: bold;
+}
+
+.ticket-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.ticket-category {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.ticket-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.ticket-details {
+  flex: 1;
+}
+
+.ticket-class {
+  margin: 0 0 5px 0;
+  font-weight: bold;
+  color: #243949;
+}
+
+.ticket-price {
+  margin: 0;
+  color: rgba(36, 57, 73, 0.8);
+}
+
+.ticket-contact {
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.ticket-contact i {
+  color: #4ab46f;
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.contact-title {
+  margin: 0 0 10px 0;
+  font-weight: bold;
+  color: #243949;
+}
+
+.contact-info {
+  margin: 0 0 5px 0;
+  color: rgba(36, 57, 73, 0.8);
+}
+
+.ticket-message {
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(74, 180, 111, 0.1);
   border-radius: 8px;
+  text-align: center;
+  border: 1px solid rgba(74, 180, 111, 0.2);
 }
 
-.ticket-form h3 {
-  text-align: center;
-  margin-bottom: 8px;
+.ticket-message p {
+  margin: 0 0 10px 0;
+  color: #243949;
+  font-weight: 500;
 }
 
-.ticket-form p {
-  text-align: center;
-  font-size: 0.875rem;
-  margin-bottom: 24px;
-  color: rgba(255, 255, 255, 0.8);
+.ticket-note {
+  margin: 0 !important;
+  font-size: 14px;
+  color: rgba(36, 57, 73, 0.7) !important;
 }
 
 /* Contact Section */

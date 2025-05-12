@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,6 +9,7 @@ import ScheduleSection from "@/components/ScheduleSection";
 import TeamSection from "@/components/TeamSection";
 import GallerySection from "@/components/GallerySection";
 import CountdownTimer from "@/components/CountdownTimer";
+import TicketSection from "@/components/TicketSection";
 import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
@@ -155,6 +155,9 @@ const Index = () => {
       
       {/* Schedule Section */}
       <ScheduleSection />
+      
+      {/* Ticket Information Section */}
+      <TicketSection />
       
       {/* Gallery Section */}
       <GallerySection />
