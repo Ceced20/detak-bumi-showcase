@@ -52,6 +52,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
           <a href="#home" className="nav-link" onClick={handleNavLinkClick}>Home</a>
           <a href="#about" className="nav-link" onClick={handleNavLinkClick}>About</a>
           <a href="#schedule" className="nav-link" onClick={handleNavLinkClick}>Schedule</a>
+          <a href="#tickets" className="nav-link" onClick={handleNavLinkClick}>Tickets</a>
           <a href="#gallery" className="nav-link" onClick={handleNavLinkClick}>Gallery</a>
           <a href="#team" className="nav-link" onClick={handleNavLinkClick}>Team</a>
           <a href="#contact" className="nav-link" onClick={handleNavLinkClick}>Contact</a>
@@ -92,6 +93,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
             <a href="#home" className="text-2xl nav-link" onClick={handleNavLinkClick}>Home</a>
             <a href="#about" className="text-2xl nav-link" onClick={handleNavLinkClick}>About</a>
             <a href="#schedule" className="text-2xl nav-link" onClick={handleNavLinkClick}>Schedule</a>
+            <a href="#tickets" className="text-2xl nav-link" onClick={handleNavLinkClick}>Tickets</a>
             <a href="#gallery" className="text-2xl nav-link" onClick={handleNavLinkClick}>Gallery</a>
             <a href="#team" className="text-2xl nav-link" onClick={handleNavLinkClick}>Team</a>
             <a href="#contact" className="text-2xl nav-link" onClick={handleNavLinkClick}>Contact</a>
